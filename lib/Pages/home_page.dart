@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
 
       body: Center(
         child: Container(
+          color: Colors.red,
           child: const  Text("Welcome to My Flutter App,  $days $name,"),
         ),
       ),
