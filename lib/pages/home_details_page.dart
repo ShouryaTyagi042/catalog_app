@@ -12,18 +12,20 @@ class HomePageDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
-        appBar: AppBar(),
+        appBar: AppBar(backgroundColor: Colors.transparent,),
         bottomNavigationBar: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
             "\$${catalog.price}".text.xl2.red800.bold.make(),
             ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(MyTheme.darkBluishColor),
-                    shape: MaterialStateProperty.all(const StadiumBorder())),
-                child: "Buy".text.xl.make()).wh(100, 50)
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(MyTheme.darkBluishColor),
+                        shape:
+                            MaterialStateProperty.all(const StadiumBorder())),
+                    child: "Add To Cart".text.xl.make())
+                .wh(130, 50)
           ],
         ).p32(),
         body: SafeArea(
@@ -52,6 +54,11 @@ class HomePageDetails extends StatelessWidget {
                         catalog.desc.text.xl
                             .textStyle(context.captionStyle)
                             .make(),
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis pellentesque suscipit. Phasellus at tempus augue. Nulla scelerisque erat sed nulla tincidunt, elementum eleifend ante aliquet. Etiam id fermentum nunc, id pulvinar urna. Nullam tempus rutrum dolor vel eleifend. Maecenas finibus quam vitae sapien condimentum, eget pretium purus vehicula. Quisque."
+                            .text
+                            .textStyle(context.captionStyle)
+                            .make()
+                            .p16()
                       ],
                     ).py64(),
                   ),
