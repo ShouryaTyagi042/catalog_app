@@ -35,11 +35,14 @@ class _CartTotal extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           "\$999".text.xl4.make(),
+          30.widthBox,
           ElevatedButton(
-              onPressed: () {},
+              onPressed:() {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "This feature is not supported yet.".text.make())) ;
+              },
               style: ButtonStyle(
                   shape: MaterialStateProperty.all(const StadiumBorder())),
-              child: "Add to Cart".text.make())
+              child: "Buy".text.make() )
         ],
       ),
     );
