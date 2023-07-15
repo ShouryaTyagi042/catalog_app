@@ -30,7 +30,7 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = CartModel() ;
+    final cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
@@ -39,12 +39,13 @@ class _CartTotal extends StatelessWidget {
           "\$${cart.totalPrice}".text.xl4.make(),
           30.widthBox,
           ElevatedButton(
-              onPressed:() {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "This feature is not supported yet.".text.make())) ;
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: "This feature is not supported yet.".text.make()));
               },
               style: ButtonStyle(
                   shape: MaterialStateProperty.all(const StadiumBorder())),
-              child: "Buy".text.make() )
+              child: "Buy".text.make())
         ],
       ),
     );
@@ -59,14 +60,24 @@ class _CartList extends StatefulWidget {
 }
 
 class _CartListState extends State<_CartList> {
+  final cart = CartModel();
+
   @override
   Widget build(BuildContext context) {
-    final  cart = CartModel() ;
-    return ListView.builder(itemCount: cart.items.length , itemBuilder: (context,index) => ListTile(
-      leading: const  Icon(Icons.done),
-      trailing: IconButton(icon: const Icon(Icons.remove_circle_outline),
-      onPressed: (){} ,),
-      title: cart.items[index].name.text.make(),
-    ));
+    return cart.items.isEmpty
+        ? "Nothing to show".text.xl2.makeCentered()
+        : ListView.builder(
+            itemCount: cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: const Icon(Icons.done),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.remove_circle_outline),
+                    onPressed: () {
+                      cart.remove(cart.items[index]);
+                      setState(() {});
+                    },
+                  ),
+                  title: Text(cart.items[index].name),
+                ));
   }
 }
