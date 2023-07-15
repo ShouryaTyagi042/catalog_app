@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog_app/Models/catalog.dart';
+import 'package:flutter_catalog_app/models/catalog.dart';
 import 'package:flutter_catalog_app/utils/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 

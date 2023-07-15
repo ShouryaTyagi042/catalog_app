@@ -10,7 +10,7 @@ class MyTheme {
         primary: darkBluishColor
       ),
       textTheme: const TextTheme(bodyMedium: TextStyle(color: Vx.black )),
-      cardColor: Colors.white,
+      cardColor: creamColor,
       canvasColor: creamColor,
       appBarTheme: const AppBarTheme(
           color: Colors.white,

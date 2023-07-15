@@ -4,7 +4,6 @@ class CatalogModel {
   static  List<Item>? items ;
   Item getById(int id) =>
       items!.firstWhere((element) => element.id == id);
-
 }
 
 class Item {
