@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: MyTheme.creamColor,
       body: Column(
         children: [
-           _CartList().p32().expand(),
+          _CartList().p32().expand(),
           const Divider(),
           const _CartTotal()
         ],
@@ -31,16 +31,19 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CartModel cart = (VxState.store as MyStore).cart ;
+    final CartModel cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          VxBuilder( mutations: const {RemoveMutation} , builder: (context,store,status) {
-            return "\$${cart.totalPrice}".text.xl4.make() ;
-          }, ) ,
-    30.widthBox,
+          VxBuilder(
+            mutations: const {RemoveMutation},
+            builder: (context, store, status) {
+              return "\$${cart.totalPrice}".text.xl4.make();
+            },
+          ),
+          30.widthBox,
           ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -58,8 +61,8 @@ class _CartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    VxState.watch(context, on: [RemoveMutation]) ;
-    final CartModel cart = (VxState.store as MyStore).cart ;
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel cart = (VxState.store as MyStore).cart;
     return cart.items.isEmpty
         ? "Nothing to show".text.xl2.makeCentered()
         : ListView.builder(

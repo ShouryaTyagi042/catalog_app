@@ -8,7 +8,7 @@ import 'package:flutter_catalog_app/utils/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(VxState(store: MyStore() ,child: const MyApp()));
+  runApp(VxState(store: MyStore(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,18 +16,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       themeMode: ThemeMode.system,
-      theme:  MyTheme.lightTheme(context)  ,
-      darkTheme: MyTheme.darkTheme(context) ,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/" : (context) => const LoginPage() ,
-        MyRoutes.loginRoute : (context) => const LoginPage() ,
-        MyRoutes.homeRoute : (context) => const HomePage() ,
-        MyRoutes.cartPage : (context) => const CartPage() ,
+        "/": (context) => const LoginPage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.cartPage: (context) => const CartPage(),
       },
     );
   }
