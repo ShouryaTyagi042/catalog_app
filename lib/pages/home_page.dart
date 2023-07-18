@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   const CatalogList().expand()
                 else
                    Center(
-                    child: const  CircularProgressIndicator().centered().expand(),
+                    child: const  CircularProgressIndicator().centered() ,
                   )
               ],
             ),
